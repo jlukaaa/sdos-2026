@@ -1,0 +1,26 @@
+# Automatsko normalizovanje kraja reda (u repou LF, na Windowsu CRLF)
+* text=auto
+
+# Izvorni kod i tekst
+*.c    text diff=cpp
+*.h    text diff=cpp
+*.s    text
+*.asm  text
+*.ldf  text
+*.py   text diff=python
+*.md   text
+*.csv  text
+*.txt  text
+*.svc  text
+.project   text
+.cproject  text
+
+# Binarni fajlovi (ne porede se kao tekst)
+*.docx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.dxe  binary
+*.doj  binary
+*.ldr  binary
+*.zip  binary
