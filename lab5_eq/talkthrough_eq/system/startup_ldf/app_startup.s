@@ -1,8 +1,8 @@
 /*
-** ADSP-21489 startup code generated on Nov 07, 2019 at 09:47:40.
+** ADSP-21489 startup code generated on Nov 17, 2026 at 17:15:06.
 */
 /*
-** Copyright (C) 2000-2019 Analog Devices Inc., All Rights Reserved.
+** Copyright (C) 2000-2023 Analog Devices Inc., All Rights Reserved.
 **
 ** This file is generated automatically based upon the options selected
 ** in the System Configuration utility. Changes to the Startup Code configuration
@@ -10,12 +10,12 @@
 ** this file. To access the System Configuration utility, double-click the
 ** system.svc file from a navigation view.
 **
-** Custom additions can be inserted within the user-modifiable sections,
-** these are bounded by comments that start with "$VDSG". Only changes
+** Custom additions can be inserted within the user-modifiable sections. These
+** sections are bounded by comments that start with "$VDSG". Only changes
 ** placed within these sections are preserved when this file is re-generated.
 **
 ** Product      : CrossCore Embedded Studio
-** Tool Version : 6.2.1.4
+** Tool Version : 6.2.5.2
 */
 
 .FILE_ATTR libGroup="startup";
@@ -148,12 +148,17 @@ start:
       .EXTERN _main;
       JUMP _main (DB);           // call main()
          DM(I7, M7) = 0;         // NULL FP to terminate call stack unwinding
-         DM(I7, M7) = PC;
+         DM(I7, M7) = ___lib_prog_term-1;
+
+.start.end:
 
       .GLOBAL ___lib_prog_term;
-___lib_prog_term:
+___lib_prog_term:                // Automatic breakpoint location.
+      NOP;                       // Placed prior to loop label so that we
+                                 // break only once.
+.lib_prog_term_loop:
       IDLE;
-      JUMP ___lib_prog_term;     // Stay put.
+      JUMP .lib_prog_term_loop;  // Stay put.
 .___lib_prog_term.end:
 
       /*
@@ -166,6 +171,4 @@ ___lib_prog_term:
          R4 = _AFE_G_LibraryError;
          R8 = _AFE_S_adi_osal_Init_failure;
 .osal_Init_failed.end:
-
-.start.end:
 

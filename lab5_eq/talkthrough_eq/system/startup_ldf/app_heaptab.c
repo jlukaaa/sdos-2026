@@ -1,8 +1,8 @@
 /*
-** ADSP-21489 user heap source file generated on Nov 07, 2019 at 09:47:40.
+** ADSP-21489 user heap source file generated on Nov 17, 2026 at 17:15:06.
 */
 /*
-** Copyright (C) 2000-2019 Analog Devices Inc., All Rights Reserved.
+** Copyright (C) 2000-2023 Analog Devices Inc., All Rights Reserved.
 **
 ** This file is generated automatically based upon the options selected
 ** in the System Configuration utility. Changes to the Heap configuration
@@ -10,12 +10,12 @@
 ** this file. To access the System Configuration utility, double-click the
 ** system.svc file from a navigation view.
 **
-** Custom additions can be inserted within the user-modifiable sections,
-** these are bounded by comments that start with "$VDSG". Only changes
+** Custom additions can be inserted within the user-modifiable sections. These
+** sections are bounded by comments that start with "$VDSG". Only changes
 ** placed within these sections are preserved when this file is re-generated.
 **
 ** Product      : CrossCore Embedded Studio
-** Tool Version : 6.2.1.4
+** Tool Version : 6.2.5.2
 */
 
 #ifdef _MISRA_RULES

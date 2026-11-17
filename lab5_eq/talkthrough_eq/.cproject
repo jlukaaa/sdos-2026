@@ -13,52 +13,53 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,com.analog.crosscore.managedbuilder.buildType=com.analog.crosscore.managedbuilder.buildType.debug" cleanCommand="clean" description="" id="sharc.toolchain.configuration.debug.1884519567" name="Debug" parent="sharc.toolchain.configuration.debug">
 					<folderInfo id="sharc.toolchain.configuration.debug.1884519567." name="/" resourcePath="">
-						<toolChain id="sharc.toolchain.debug.1013810501" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain">
+						<toolChain id="sharc.toolchain.debug.1013810501" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" targetTool="sharc.toolchain.linker">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform.2135266519" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
 							<builder buildPath="${workspace_loc:/Lab05}/Debug" id="sharc.toolchain.builder.1883633064" keepEnvironmentInBuildfile="false" name="CrossCore SHARC Builder" superClass="sharc.toolchain.builder"/>
 							<tool id="sharc.toolchain.assembler.541829323" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler">
 								<option id="assembler.option.debugcode.1782676630" name="Generate debug information (-g)" superClass="assembler.option.debugcode" useByScannerDiscovery="false"/>
-								<option id="assembler.option.proc.251939746" name="-proc" superClass="assembler.option.proc" value=" ADSP-21489" valueType="string"/>
-								<option id="assembler.option.sirevision.1178421222" name="-si-revision" superClass="assembler.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="assembler.option.preprocessdefs.554833456" name="Preprocessor definitions (-D):" superClass="assembler.option.preprocessdefs" valueType="definedSymbols">
+								<option id="assembler.option.proc.251939746" name="-proc" superClass="assembler.option.proc" useByScannerDiscovery="false" value=" ADSP-21489" valueType="string"/>
+								<option id="assembler.option.sirevision.1178421222" name="-si-revision" superClass="assembler.option.sirevision" useByScannerDiscovery="false" value=" 0.2" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="assembler.option.preprocessdefs.554833456" name="Preprocessor definitions (-D):" superClass="assembler.option.preprocessdefs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
 								</option>
-								<option id="assembler.option.additionaldirectories.1131332623" name="Additional include directories (-I):" superClass="assembler.option.additionaldirectories" valueType="includePath">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="assembler.option.additionaldirectories.1131332623" name="Additional include directories (-I):" superClass="assembler.option.additionaldirectories" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/system}&quot;"/>
 								</option>
 								<inputType id="assembler.input.1973774192" name="Assembler Source" superClass="assembler.input"/>
 							</tool>
 							<tool id="sharc.toolchain.compiler.909720163" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler">
-								<option id="compiler.option.optimization.1818953032" name="Enable optimization (-O)" superClass="compiler.option.optimization" useByScannerDiscovery="false"/>
+								<option id="compiler.option.optimization.1818953032" name="Enable optimization (-O)" superClass="compiler.option.optimization" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="compiler.option.debugcode.545072407" name="Generate debug information (-g)" superClass="compiler.option.debugcode" useByScannerDiscovery="false"/>
-								<option id="compiler.option.proc.480036205" name="-proc" superClass="compiler.option.proc" value=" ADSP-21489" valueType="string"/>
-								<option id="compiler.option.sirevision.595341684" name="-si-revision" superClass="compiler.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="compiler.option.preprocessdefs.1078992448" name="Preprocessor definitions (-D):" superClass="compiler.option.preprocessdefs" valueType="definedSymbols">
+								<option id="compiler.option.proc.480036205" name="-proc" superClass="compiler.option.proc" useByScannerDiscovery="false" value=" ADSP-21489" valueType="string"/>
+								<option id="compiler.option.sirevision.595341684" name="-si-revision" superClass="compiler.option.sirevision" useByScannerDiscovery="false" value=" 0.2" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="compiler.option.preprocessdefs.1078992448" name="Preprocessor definitions (-D):" superClass="compiler.option.preprocessdefs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
 								</option>
-								<option id="compiler.option.coreid.1420519417" name="Specify the core Id (-DCORE[A|B|0-2])" superClass="compiler.option.coreid" value="0" valueType="string"/>
-								<option id="compiler.option.additionaldirectories.724990137" name="Additional include directories (-I):" superClass="compiler.option.additionaldirectories" valueType="includePath">
+								<option id="compiler.option.coreid.1420519417" name="Specify the core Id (-DCORE[A|B|0-2])" superClass="compiler.option.coreid" useByScannerDiscovery="false" value="0" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="compiler.option.additionaldirectories.724990137" name="Additional include directories (-I):" superClass="compiler.option.additionaldirectories" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/system}&quot;"/>
 								</option>
-								<option id="compiler.option.compilerswitch.747083140" name="Compiler Switch" superClass="compiler.option.compilerswitch" value="false" valueType="boolean"/>
+								<option id="compiler.option.compilerswitch.747083140" name="Compiler Switch" superClass="compiler.option.compilerswitch" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<inputType id="compiler.inputType.671891295" name="C/C++ Source" superClass="compiler.inputType"/>
 							</tool>
 							<tool id="sharc.toolchain.linker.885608507" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker">
 								<option id="linker.option.individmap.239422987" name="Individually map functions and data items (-ip)" superClass="linker.option.individmap" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="linker.option.eliminateunused.1774934143" name="Eliminate unused objects (-e)" superClass="linker.option.eliminateunused" useByScannerDiscovery="false"/>
 								<option id="linker.option.usedbglib.261775744" name="Use Debug System libraries (-add-debug-libpaths)" superClass="linker.option.usedbglib" useByScannerDiscovery="false"/>
-								<option id="linker.option.proc.166963138" name="-proc" superClass="linker.option.proc" value=" ADSP-21489" valueType="string"/>
-								<option id="linker.option.sirevision.1091388708" name="-si-revision" superClass="linker.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="linker.option.preprocessdefs.721603217" name="Preprocessor definitions (-MD)" superClass="linker.option.preprocessdefs" valueType="definedSymbols">
+								<option id="linker.option.proc.166963138" name="-proc" superClass="linker.option.proc" useByScannerDiscovery="false" value=" ADSP-21489" valueType="string"/>
+								<option id="linker.option.sirevision.1091388708" name="-si-revision" superClass="linker.option.sirevision" useByScannerDiscovery="false" value=" 0.2" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="linker.option.preprocessdefs.721603217" name="Preprocessor definitions (-MD)" superClass="linker.option.preprocessdefs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
 								</option>
-								<option id="linker.option.ldfprocessing.ldffile.1053202072" name="Custom LDF (-T)" superClass="linker.option.ldfprocessing.ldffile" value="&quot;${ProjDirPath}/system/startup_ldf/app.ldf&quot;" valueType="string"/>
-								<option id="linker.option.srchdir.1788463896" name="Library search directories (-L):" superClass="linker.option.srchdir" valueType="libPaths">
+								<option id="linker.option.ldfprocessing.ldffile.1053202072" name="Custom LDF (-T)" superClass="linker.option.ldfprocessing.ldffile" useByScannerDiscovery="false" value="&quot;${ProjDirPath}/system/startup_ldf/app.ldf&quot;" valueType="string"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="linker.option.srchdir.1788463896" name="Library search directories (-L):" superClass="linker.option.srchdir" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${OutDir}/system/startup_ldf&quot;"/>
 								</option>
+								<option id="linker.option.misrachecksrcfiles.1533271693" superClass="linker.option.misrachecksrcfiles" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="linker.doj.input.1389532239" name="Object Files" superClass="linker.doj.input"/>
 							</tool>
 							<tool id="sharc.toolchain.archiver.1596677612" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver">
@@ -68,7 +69,25 @@
 							<tool id="sharc.toolchain.loader.1722016918" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader">
 								<option id="loader.option.proc.174238177" name="-proc" superClass="loader.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="loader.option.sirevision.37411954" name="-si-revision" superClass="loader.option.sirevision" value=" 0.2" valueType="string"/>
+								<option id="sharc.loader.option.kernelfile.1311782232" superClass="sharc.loader.option.kernelfile" value="C:\Analog Devices\CrossCore Embedded Studio 2.12.1\SHARC\ldr\489_prom.dxe" valueType="string"/>
 							</tool>
+							<tool id="sharc.toolchain.deviceprogrammer.1641176963" name="CrossCore SHARC Device Programmer" superClass="sharc.toolchain.deviceprogrammer">
+								<option id="deviceprogrammer.option.proc.910726124" name="-proc" superClass="deviceprogrammer.option.proc" value=" ADSP-21489" valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="sharc.toolchain.configuration.debug.1884519567.system" name="system" resourcePath="system">
+						<toolChain id="sharc.toolchain.182721494" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" unusedChildren="">
+							<tool id="sharc.toolchain.assembler.397250031" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler.541829323">
+								<inputType id="assembler.input.542795777" name="Assembler Source" superClass="assembler.input"/>
+							</tool>
+							<tool id="sharc.toolchain.compiler.1507934242" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler.909720163">
+								<inputType id="compiler.inputType.461158968" name="C/C++ Source" superClass="compiler.inputType"/>
+							</tool>
+							<tool id="sharc.toolchain.linker.476332333" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker.885608507"/>
+							<tool id="sharc.toolchain.archiver.1719002508" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver.1596677612"/>
+							<tool id="sharc.toolchain.loader.1328489116" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader.1722016918"/>
+							<tool id="sharc.toolchain.deviceprogrammer.1642831217" name="CrossCore SHARC Device Programmer" superClass="sharc.toolchain.deviceprogrammer.1641176963"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -92,18 +111,18 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,com.analog.crosscore.managedbuilder.buildType=com.analog.crosscore.managedbuilder.buildType.release" cleanCommand="clean" description="" id="sharc.toolchain.configuration.release.385378932" name="Release" parent="sharc.toolchain.configuration.release">
 					<folderInfo id="sharc.toolchain.configuration.release.385378932." name="/" resourcePath="">
-						<toolChain id="sharc.toolchain.release.488297643" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain">
+						<toolChain id="sharc.toolchain.release.488297643" isAbstract="false" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" targetTool="sharc.toolchain.linker">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="sharc.platform.508595182" name="CrossCore SHARC Target Platform" osList="all" superClass="sharc.platform"/>
 							<builder buildPath="${workspace_loc:/Lab05}/Release" id="sharc.toolchain.builder.710448938" keepEnvironmentInBuildfile="false" name="CrossCore SHARC Builder" superClass="sharc.toolchain.builder"/>
 							<tool id="sharc.toolchain.assembler.2087528892" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler">
 								<option id="assembler.option.debugcode.51689083" name="Generate debug information (-g)" superClass="assembler.option.debugcode" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="assembler.option.proc.1148377278" name="-proc" superClass="assembler.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="assembler.option.sirevision.201057691" name="-si-revision" superClass="assembler.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="assembler.option.preprocessdefs.2039866999" name="Preprocessor definitions (-D):" superClass="assembler.option.preprocessdefs" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="assembler.option.preprocessdefs.2039866999" name="Preprocessor definitions (-D):" superClass="assembler.option.preprocessdefs" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="NDEBUG"/>
 								</option>
-								<option id="assembler.option.additionaldirectories.1398499115" name="Additional include directories (-I):" superClass="assembler.option.additionaldirectories" valueType="includePath">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="assembler.option.additionaldirectories.1398499115" name="Additional include directories (-I):" superClass="assembler.option.additionaldirectories" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/system}&quot;"/>
 								</option>
 								<inputType id="assembler.input.1951826047" name="Assembler Source" superClass="assembler.input"/>
@@ -113,12 +132,12 @@
 								<option id="compiler.option.debugcode.1429893927" name="Generate debug information (-g)" superClass="compiler.option.debugcode" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="compiler.option.proc.1160747811" name="-proc" superClass="compiler.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="compiler.option.sirevision.1815629393" name="-si-revision" superClass="compiler.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="compiler.option.preprocessdefs.1568156670" name="Preprocessor definitions (-D):" superClass="compiler.option.preprocessdefs" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="compiler.option.preprocessdefs.1568156670" name="Preprocessor definitions (-D):" superClass="compiler.option.preprocessdefs" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="NDEBUG"/>
 								</option>
 								<option id="compiler.option.coreid.1437733770" name="Specify the core Id (-DCORE[A|B|0-2])" superClass="compiler.option.coreid" value="0" valueType="string"/>
-								<option id="compiler.option.additionaldirectories.1853273325" name="Additional include directories (-I):" superClass="compiler.option.additionaldirectories" valueType="includePath">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="compiler.option.additionaldirectories.1853273325" name="Additional include directories (-I):" superClass="compiler.option.additionaldirectories" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/system}&quot;"/>
 								</option>
 								<option id="compiler.option.compilerswitch.1189226481" name="Compiler Switch" superClass="compiler.option.compilerswitch" value="false" valueType="boolean"/>
@@ -130,14 +149,15 @@
 								<option id="linker.option.usedbglib.225727485" name="Use Debug System libraries (-add-debug-libpaths)" superClass="linker.option.usedbglib" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="linker.option.proc.1507625407" name="-proc" superClass="linker.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="linker.option.sirevision.1361007810" name="-si-revision" superClass="linker.option.sirevision" value=" 0.2" valueType="string"/>
-								<option id="linker.option.preprocessdefs.1285250272" name="Preprocessor definitions (-MD)" superClass="linker.option.preprocessdefs" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="linker.option.preprocessdefs.1285250272" name="Preprocessor definitions (-MD)" superClass="linker.option.preprocessdefs" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="CORE0"/>
 									<listOptionValue builtIn="false" value="RELEASE"/>
 								</option>
 								<option id="linker.option.ldfprocessing.ldffile.88461837" name="Custom LDF (-T)" superClass="linker.option.ldfprocessing.ldffile" value="&quot;${ProjDirPath}/system/startup_ldf/app.ldf&quot;" valueType="string"/>
-								<option id="linker.option.srchdir.670120154" name="Library search directories (-L):" superClass="linker.option.srchdir" valueType="libPaths">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="linker.option.srchdir.670120154" name="Library search directories (-L):" superClass="linker.option.srchdir" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${OutDir}/system/startup_ldf&quot;"/>
 								</option>
+								<option id="linker.option.misrachecksrcfiles.1685817588" superClass="linker.option.misrachecksrcfiles" value="true" valueType="boolean"/>
 								<inputType id="linker.doj.input.2094618807" name="Object Files" superClass="linker.doj.input"/>
 							</tool>
 							<tool id="sharc.toolchain.archiver.1243988951" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver">
@@ -147,7 +167,25 @@
 							<tool id="sharc.toolchain.loader.882398444" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader">
 								<option id="loader.option.proc.1418944438" name="-proc" superClass="loader.option.proc" value=" ADSP-21489" valueType="string"/>
 								<option id="loader.option.sirevision.1004338504" name="-si-revision" superClass="loader.option.sirevision" value=" 0.2" valueType="string"/>
+								<option id="sharc.loader.option.kernelfile.1156070449" superClass="sharc.loader.option.kernelfile" value="C:\Analog Devices\CrossCore Embedded Studio 2.12.1\SHARC\ldr\489_prom.dxe" valueType="string"/>
 							</tool>
+							<tool id="sharc.toolchain.deviceprogrammer.1129429724" name="CrossCore SHARC Device Programmer" superClass="sharc.toolchain.deviceprogrammer">
+								<option id="deviceprogrammer.option.proc.1581431459" name="-proc" superClass="deviceprogrammer.option.proc" value=" ADSP-21489" valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="sharc.toolchain.configuration.release.385378932.system" name="system" resourcePath="system">
+						<toolChain id="sharc.toolchain.168839592" name="CrossCore SHARC Toolchain" superClass="sharc.toolchain" unusedChildren="">
+							<tool id="sharc.toolchain.assembler.358562537" name="CrossCore SHARC Assembler" superClass="sharc.toolchain.assembler.2087528892">
+								<inputType id="assembler.input.1632093910" name="Assembler Source" superClass="assembler.input"/>
+							</tool>
+							<tool id="sharc.toolchain.compiler.356620817" name="CrossCore SHARC C/C++ Compiler" superClass="sharc.toolchain.compiler.456683729">
+								<inputType id="compiler.inputType.1042961829" name="C/C++ Source" superClass="compiler.inputType"/>
+							</tool>
+							<tool id="sharc.toolchain.linker.409825530" name="CrossCore SHARC Linker" superClass="sharc.toolchain.linker.979537747"/>
+							<tool id="sharc.toolchain.archiver.1065343951" name="CrossCore SHARC Archiver" superClass="sharc.toolchain.archiver.1243988951"/>
+							<tool id="sharc.toolchain.loader.1166330030" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader.882398444"/>
+							<tool id="sharc.toolchain.deviceprogrammer.1966875565" name="CrossCore SHARC Device Programmer" superClass="sharc.toolchain.deviceprogrammer.1129429724"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -176,4 +214,6 @@
 			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxSource" language="org.eclipse.cdt.core.c++.adi.extension"/>
 		</project-mappings>
 	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

@@ -43,35 +43,40 @@
 
 
 #include "ADDS_21479_EzKit.h"
+#include "eq_rt.h"      /* Lab 5, tema 6: stereo ekvilajzer */
+
+/* Izbor ulaza za EQ: 0 = zbir ADC1 + ADC2 (radi bez obzira na koji je ulaz
+ * prikljucen izvor), 1 = samo ADC1, 2 = samo ADC2. */
+#define EQ_INPUT  0
 
 void  process_AD1939_samples(  uint32_t iid, void *handlerarg)
 {
-	/* Perform AD1939 Audio Processing Here Using 32-bit Floating-point Math
-	 *  (Note: The ADC/DAC variables below are used to "double-buffer" the audio
-	 *  samples with temporary variables, allowing active DMA completion of
-	 *  rx1a_buf[] and tx0a_buf[])
-	 */
-	   
+	float L, R;
+
+	eq_rt_isr_begin();		/* mjerenje ISR-a + brojac propustenih rokova */
+
 	Receive_ADC_Samples();
 
-	/* Loop back AD1939 ADC1 data to DAC1 */
-	Left_Channel_Out1 = Left_Channel_In2;	
-	Right_Channel_Out1 = Right_Channel_In2;	
+#if EQ_INPUT == 1
+	L = Left_Channel_In1;
+	R = Right_Channel_In1;
+#elif EQ_INPUT == 2
+	L = Left_Channel_In2;
+	R = Right_Channel_In2;
+#else
+	L = Left_Channel_In1 + Left_Channel_In2;
+	R = Right_Channel_In1 + Right_Channel_In2;
+#endif
 
-	/* create a simple stereo digital delay on internal AD1939 stereo DAC2 channels */
-	/* Delay-line length must not exceed usable seg_dmda memory addresses! */
-	Left_Channel_Out2 = Left_Channel_In2;			/* loopback left channel, no processing */
-	Right_Channel_Out2 = DelayLine[Index] + Right_Channel_In2; /* delayed left + right channel */
-	
-	DelayLine[Index++] = Right_Channel_In2;		/* store right channel into delay-line */
-	if (Index == DELAYLINESIZE) Index = 0;
+	eq_rt_process(&L, &R);	/* stereo EQ (verzija i K se biraju iz debagera) */
 
-	/* loop back ADC1 audio data to other DACs 3 & 4 */
-	Left_Channel_Out3 = Left_Channel_In1;
-	Right_Channel_Out3 = Right_Channel_In1;
-	Left_Channel_Out4 = Left_Channel_In1;
-	Right_Channel_Out4 = Right_Channel_In1;
+	/* isti obradjeni signal na sva 4 stereo DAC izlaza */
+	Left_Channel_Out1 = L;	Right_Channel_Out1 = R;
+	Left_Channel_Out2 = L;	Right_Channel_Out2 = R;
+	Left_Channel_Out3 = L;	Right_Channel_Out3 = R;
+	Left_Channel_Out4 = L;	Right_Channel_Out4 = R;
 
 	Transmit_DAC_Samples();
-}
 
+	eq_rt_isr_end();
+}

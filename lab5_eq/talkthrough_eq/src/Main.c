@@ -13,6 +13,7 @@
  */
 
 #include "ADDS_21479_EzKit.h"
+#include "eq_rt.h"      /* Lab 5, tema 6: stereo ekvilajzer */
 
 
 volatile float * DelayLine;
@@ -51,16 +52,17 @@ void	main()
 
 	SinTableInit();
 
-	/* Set up small delay buffer */
-//	DelayLine = (float *) 0x000C4000;
-	DelayLine =(float *) malloc(DELAYLINESIZE * sizeof(float));
+	/* Lab 5, tema 6: delay linija (eho) se vise ne koristi - umjesto nje radi EQ.
+	 * fCCLK = 400 MHz (init_PLL_SDRAM.c), fs = 48 kHz (init1939viaSPI.c). */
+	eq_rt_init(400000000.0f, 48000.0f);
 
 	for (;;)
 	  {
 		if(count==10)
-			puts("Talkthrough is running successfully");
+			puts("Talkthrough + EQ is running successfully");
 		count++;
-    	asm("idle;");
+		eq_rt_poll();		/* primjena promjene g_req_version / g_req_K */
+    	asm("idle;");		/* cekanje na sljedeci prekid */
       }
 }
 
