@@ -1,0 +1,17 @@
+# CCES build izlaz
+Debug/
+Release/
+*.doj
+*.dxe
+*.ldr
+*.map.xml
+linker_log.xml
+RemoteSystemsTempFiles/
+.metadata/
+
+# Python
+__pycache__/
+
+# Windows / Office privremeni fajlovi
+Thumbs.db
+~$*
