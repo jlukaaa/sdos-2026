@@ -11,6 +11,7 @@ Potrebno: pip install matplotlib
 SDOS 2026, Lab 5, tema 6 - Student: Luka Jovetic
 """
 import csv
+import math
 import sys
 import matplotlib.pyplot as plt
 
@@ -54,13 +55,23 @@ def main(path):
 
     # Slika 1: ciklusi po stereo odmjerku u zavisnosti od K (log skala)
     fig, ax = plt.subplots(figsize=(7.5, 4.6), dpi=150)
+    ends = []
     for v, pts in sorted(data.items()):
         ks = [k for k, _ in pts]; cs = [max(c, 1) for _, c in pts]
         ax.plot(ks, cs, color=COLORS[v], linewidth=2, marker=MARKERS[v], markersize=6,
                 markeredgecolor="white", markeredgewidth=1, label=NAMES[v])
-        ax.annotate(NAMES[v], (ks[-1], cs[-1]), xytext=(6, 0), textcoords="offset points",
-                    va="center", fontsize=8, color=INK)
+        ends.append([math.log10(cs[-1]), v, ks[-1], cs[-1]])
+    # razmakni natpise na desnom kraju da se ne preklapaju (min. razmak u dekadama)
+    ends.sort()
+    gap = 0.08
+    for i in range(1, len(ends)):
+        if ends[i][0] - ends[i - 1][0] < gap:
+            ends[i][0] = ends[i - 1][0] + gap
+    kmax = max(e[2] for e in ends)
+    for ly, v, kx, cy in ends:
+        ax.text(kx * 1.12, 10 ** ly, NAMES[v], va="center", fontsize=8, color=INK)
     ax.set_xscale("log", base=2); ax.set_yscale("log")
+    ax.set_xlim(0.8, kmax * 3.2)
     ax.set_xlabel("broj sekcija K", color=INK); ax.set_ylabel("ciklusa po stereo odmjerku", color=INK)
     ax.set_title("Slika 1. Cijena obrade jednog stereo odmjerka", color=INK, fontsize=11, loc="left")
     style(ax); ax.legend(frameon=False, fontsize=8, loc="upper left")
