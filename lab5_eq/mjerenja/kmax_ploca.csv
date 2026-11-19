@@ -1,0 +1,6 @@
+verzija,Kmax_izmjereno,EQ_na_Kmax,ISR_na_Kmax,K_pad,ISR_na_K_pad,Kmax_model_bench_CISR200,Kmax_predvidjanje_prije_mjerenja
+V1 C -O0,65,7713,7933,66,8048,68,89
+V2 C -O,384,7773,7993,385,8014,403,405
+V3 biquad(),617,7778,7996,618,8008,647,667
+V4 SIMD,768,7771,7991,769,8002,806,900
+V5 SIMD+dm/pm,769,7778,7994,770,8005,806,>1024

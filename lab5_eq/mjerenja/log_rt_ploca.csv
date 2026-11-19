@@ -1,0 +1,21 @@
+vrijeme,verzija,K,g_bypass,g_cyc_eq_max,g_cyc_isr_max,g_missed,napomena
+11:20,-,-,-,-,-,-,ulaz radi nakon premjestanja RCA; izlaz HEADPHONE OUT; test tonovima OK
+11:22,V5,8,0,162,382,0,ISR sa EQ; CISR = 382-162 = 220
+11:25,V1,68,0,8064,8285,768830,NE PROLAZI (isr 8285 < 8333 ali rok propusten - neizmjerena rezija dispecera prekida)
+11:26,V1,64,0,7596,7816,0,PROLAZI
+11:27,V1,66,0,7827,8048,225825,NE PROLAZI
+11:28,V1,65,0,7713,7933,0,PROLAZI -> Kmax(V1)=65; granica izmjerenog ISR-a izmedju 7933 i 8048
+11:29,V2,384,0,7773,7993,0,PROLAZI (pred. EQ 7766)
+11:29,V2,386,0,7813,8034,356698,NE PROLAZI
+11:30,V2,385,0,7793,8014,119735,NE PROLAZI -> Kmax(V2)=384; granica ISR izmedju 7993 i 8014
+11:31,V3,616,0,7772,7990,0,PROLAZI (pauza zaustavlja unutar biquad() - CCES otvara Source not found)
+11:32,V3,618,0,7790,8008,249336,NE PROLAZI; granica ISR izmedju 7993 i 8008
+11:32,V3,617,0,7778,7996,0,PROLAZI -> Kmax(V3)=617; granica ISR izmedju 7996 i 8008
+11:33,V4,769,0,7781,8002,98798,NE PROLAZI; granica ISR izmedju 7996 i 8002
+11:34,V4,771,0,7801,8022,141436,NE PROLAZI
+11:34,V4,770,0,7791,8012,127335,NE PROLAZI
+11:34,V4,768,0,7771,7991,0,PROLAZI -> Kmax(V4)=768
+11:35,V5,769,0,7778,7994,0,PROLAZI
+11:36,V5,771,0,7800,8015,138242,NE PROLAZI
+11:36,V5,770,0,7786,8005,128198,NE PROLAZI -> Kmax(V5)=769
+11:37,-,-,-,-,-,-,slusni test: sa EQ (K=8) glas slabiji/manje razgovijetan, najizrazeniji bas; bez EQ glas jaci; pri prekoracenju roka krcanje nije primijeceno
