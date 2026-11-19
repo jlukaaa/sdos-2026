@@ -1,5 +1,5 @@
 """
-plot_results.py - grafici iz rezultata benchmarka (eq_bench.c).
+plot_results.py (slike bez naslova - naslov je potpis u izvjestaju) - grafici iz rezultata benchmarka (eq_bench.c).
 
 Upotreba:
   1. Iz Console ispisa kopirati redove izmedju CSV_BEGIN i CSV_END u results.csv
@@ -73,7 +73,6 @@ def main(path):
     ax.set_xscale("log", base=2); ax.set_yscale("log")
     ax.set_xlim(0.8, kmax * 3.2)
     ax.set_xlabel("broj sekcija K", color=INK); ax.set_ylabel("ciklusa po stereo odmjerku", color=INK)
-    ax.set_title("Slika 1. Cijena obrade jednog stereo odmjerka", color=INK, fontsize=11, loc="left")
     style(ax); ax.legend(frameon=False, fontsize=8, loc="upper left")
     fig.tight_layout(); fig.savefig("slika1_ciklusi_vs_K.png"); plt.close(fig)
 
@@ -89,8 +88,6 @@ def main(path):
     ax.axhline(2.5, color=MUTED, linestyle=":", linewidth=1.5, label="SIMD minimum = 2,5")
     ax.legend(frameon=False, fontsize=8, loc="upper right")
     ax.set_ylabel("ciklusa po sekciji po kanalu", color=INK)
-    ax.set_title("Slika 2. Izmjerena cijena sekcije (nagib b/2) i teorijski minimum",
-                 color=INK, fontsize=11, loc="left")
     style(ax); ax.grid(axis="x", visible=False)
     fig.tight_layout(); fig.savefig("slika2_ciklusi_po_sekciji.png"); plt.close(fig)
 
